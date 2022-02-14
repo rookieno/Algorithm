@@ -39,6 +39,7 @@ def solution(s):
     dictionary = dict(zip(repeat,result)) # 딕셔너리 형태로 반복수:숫자 
 
     sort_dict = sorted(dictionary.items(), reverse=True) # 키값(반복수)를 기준으로 내림차순 정렬
+    
     for i in range(len(sort_dict)): 
         answer.append(sort_dict[i][1]) # 정렬된 딕셔너리에서 벨류값만 저장
 
