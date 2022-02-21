@@ -1,3 +1,6 @@
-a = "JAZ"
+a = [56, 4, 81, 9, 56, 4]
 
-print(a[1:])
+non = set(a)
+
+print(list(non))
+
