@@ -1,12 +1,30 @@
 def solution(genres, plays):
-    most_genre = {}
-    
-    return
+    n = len(genres)
+    total_genres_plays = {}
+    genre_index_play = {}
+    for i in range(n):
+        genre = genres[i]
+        play = plays[i]
+        if genre not in total_genres_plays:
+            total_genres_plays[genre] = play
+            genre_index_play[genre] = [[i, play]]
+        else:
+            total_genres_plays[genre] += play
+            genre_index_play[genre].append([i, play])
 
+    sorted_total_genres_plays = sorted(total_genres_plays.items(), key= lambda x:x[1], reverse=True)
+    result = []
+    for genre, value in sorted_total_genres_plays:
+        index_play = genre_index_play[genre]
+        print(index_play)
+        sorted_index_play = sorted(index_play, key=lambda x: x[1], reverse=True)
+        print(sorted_index_play)
+        for i in range(len(sorted_index_play)):
+            if i > 1:
+                break
+            result.append(sorted_index_play[i][0])
+    return result
 
-
-
-#     return 
 
 
 
