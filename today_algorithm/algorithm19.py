@@ -14,7 +14,7 @@ def solution(genres, plays):
 
     sorted_total_genres_plays = sorted(total_genres_plays.items(), key= lambda x:x[1], reverse=True) 
     result = []
-    for genre, value in sorted_total_genres_plays:
+    for genre, _value in sorted_total_genres_plays:
         index_play = genre_index_play[genre]
         sorted_index_play = sorted(index_play, key=lambda x: x[1], reverse=True)
         for i in range(len(sorted_index_play)):
