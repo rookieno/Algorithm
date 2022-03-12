@@ -20,14 +20,13 @@
 
 def solution(progresses, speeds):
     answer = []
-    days = 0
+    days = []
     for i in range(len(progresses)):
-        if progresses[i] + days * speeds[i] > 100:
-            answer.append(days)
-        else:
-            days += 1
-        
-    return answer
+        a = 100 - progresses[i]
+        day = a / speeds[i]
+        days.append(int(day))
+
+    return days
 
 
 
