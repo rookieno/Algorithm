@@ -17,6 +17,7 @@
 #     answer.append(count)
 
 #     return answer
+import math
 
 def solution(progresses, speeds):
     answer = []
@@ -24,7 +25,10 @@ def solution(progresses, speeds):
     for i in range(len(progresses)):
         a = 100 - progresses[i]
         day = a / speeds[i]
-        days.append(int(day))
+        days.append(math.ceil(day))
+        
+
+        
 
     return days
 
