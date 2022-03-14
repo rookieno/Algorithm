@@ -26,11 +26,15 @@ def solution(progresses, speeds):
         a = 100 - progresses[i]
         day = a / speeds[i]
         days.append(math.ceil(day))
-        
 
+    i = 0
+    for j in range(1,len(days)):
+        if days[i] < days[j]:
+            answer.append(j-i)
+            i = j
+    answer.append(len(days)-i)
         
-
-    return days
+    return answer
 
 
 
