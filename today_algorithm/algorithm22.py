@@ -28,12 +28,15 @@ def solution(progresses, speeds):
         days.append(math.ceil(day))
 
     i = 0
+    print(days)
     for j in range(1,len(days)):
         if days[i] < days[j]:
             answer.append(j-i)
             i = j
+    print(len(days))
+    print(i)
     answer.append(len(days)-i)
-        
+
     return answer
 
 
