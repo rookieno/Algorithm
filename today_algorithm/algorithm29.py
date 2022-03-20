@@ -3,15 +3,15 @@ import heapq
 
 def solution(scoville, K):
     answer = 0
-    heapq.heapify(scoville)
-    while scoville[0] < K:
+    heapq.heapify(scoville) # 리스트를 힙으로
+    while scoville[0] < K: # 효율성을 위해 0번째 = 제일 작은수
         try:
             answer += 1
             a = heapq.heappop(scoville)
             b = heapq.heappop(scoville)
             result = a + (b*2)
             heapq.heappush(scoville,result)
-        except:
+        except: # 예외
             return -1
     return answer
 
