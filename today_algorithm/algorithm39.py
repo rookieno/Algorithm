@@ -18,8 +18,5 @@ while min_tree <= max_tree:
     else:
         max_tree = guess_tree - 1
 
-print(guess_tree)
-
-
     
     

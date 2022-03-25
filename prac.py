@@ -44,22 +44,20 @@
 # print(lcm)
 
 
+# 유클리드 호재법
+# a = 1071
 
+# b = 1029
 
-from tkinter import N
+# def gcd(a,b):
+#     if a < b:
+#         a, b = b, a
+#     if b == 0:
+#         return a
+#     if a % b == 0:
+#         return b
+#     else:
+#         return gcd(b, a%b)
+# print(gcd(a,b))
 
-
-a = 1071
-
-b = 1029
-
-def gcd(a,b):
-    if a < b:
-        a, b = b, a
-    if b == 0:
-        return a
-    if a % b == 0:
-        return b
-    else:
-        return gcd(b, a%b)
-print(gcd(a,b))
+print(1029%42)
