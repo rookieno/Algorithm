@@ -10,7 +10,6 @@ def solution(s, n):
         else:
             i = chr((ord(i) - ord('A') + n) % 26 + ord('A'))
             answer += i
-
     return answer
 
 s = "z"
