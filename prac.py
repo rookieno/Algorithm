@@ -60,4 +60,8 @@
 #         return gcd(b, a%b)
 # print(gcd(a,b))
 
-print(1029%42)
+# print(1029%42)
+
+a = [5,4,3,2,1]
+b = sorted(a)
+print(a)
