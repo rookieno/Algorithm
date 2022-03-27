@@ -1,30 +1,26 @@
+# 프로그래머스 [1차] 다트 게임
 def solution(dartResult):
-    answer = 0
+    answer = ''
     result = []
     for i in dartResult:
         if i.isdigit():
-            answer += int(i)
+            answer += i
         elif i == 'S':
-            answer = answer ** 1
-            result.append(answer)
-            answer = 0
+            result.append(int(answer) ** 1)
+            answer = ''
         elif i == 'D':
-            answer = answer ** 2
-            result.append(answer)
-            answer = 0
+            result.append(int(answer) ** 2)
+            answer = ''
         elif i == 'T':
-            answer = answer ** 3
-            result.append(answer)
-            answer = 0
+            result.append(int(answer) ** 3)
+            answer = ''
         elif i == '*':
-            for i,j in enumerate(result):
-                result[i] = j*2
-                print(result[i])
+            if len(result) == 1:
+                result[-1] = result[-1] * 2
+            else:
+                result[-2] = result[-2] * 2
+                result[-1] = result[-1] * 2
         elif i == '#':
-            result[-1] = -result[-1]
-    print(result)      
+            result[-1] = -result[-1]      
 
     return sum(result)
-
-
-print(solution("1D2S3T*"))
