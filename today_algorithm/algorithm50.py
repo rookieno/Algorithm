@@ -2,14 +2,16 @@
 from itertools import combinations
 
 def solution(nums):
-    answer = []
-    pick = list(combinations(nums, 2))
-    for i in pick:
-        if sum(i) not in answer:
-            print(sum(i))
-            answer.append(sum(i))
-    print(answer)
-    return len(answer)
+    answer = 0
+    pick = len(nums)//2
+    num_list = list(set(nums))
+    
+    if pick > len(num_list):
+        answer += len(num_list)
+    else:
+        answer += pick
+
+    return answer
 
 a = [3,1,2,3]
 print(solution(a))
