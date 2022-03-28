@@ -7,11 +7,9 @@ def solution(new_id):
 
     # 정규 표헌식 숫자 소문자 - _ . 만남김
     id = re.sub('[^a-z\d\-\_\.]', '', id)
-    print(id)
 
     # 문자욜로
     id = ''.join(id)
-
 
     # '..' -> '.'
     while '..' in id:

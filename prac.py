@@ -62,10 +62,41 @@
 
 # print(1029%42)
 
-a = [5,4,3,2,1]
+# a = [5,4,3,2,1]
 
-a.sort() # a 리스트 그 자체를 정렬해줌
+# a.sort() # a 리스트 그 자체를 정렬해줌
 
-b = sorted(a) # a 리스트 원래 값은 변경하지않고 새롭게 정렬한 리스트를 만듬, 리스트형태가 아니라 모든 iterable이면 사용가능
+# b = sorted(a) # a 리스트 원래 값은 변경하지않고 새롭게 정렬한 리스트를 만듬, 리스트형태가 아니라 모든 iterable이면 사용가능
 
-print(a)
+# print(a)
+import sys
+
+n = int(input())
+
+stack = []
+
+for i in range(n):
+        order = sys.stdin.readline().split()
+
+        if order[0] == 'push':
+                stack.append(int(order[1]))
+        
+        if order[0] == 'pop':
+                if len(stack) != 0:
+                        print(stack.pop())
+                        
+                else:
+                        print(-1)
+        if order[0] == 'size':
+                print(len(stack))
+        
+        if order[0] == 'empty':
+                if len(stack) == 0:
+                        print(1)
+                else:
+                        print(0)
+        if order[0] == '':
+                if len(stack) != 0:
+                        print(stack[-1])
+                else:
+                        print(-1)
