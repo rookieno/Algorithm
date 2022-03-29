@@ -7,7 +7,6 @@
 
 # 한번에 받아왔다.
 # msg1 = 'a b 2022-03-22 2022-03-22'
-# cnt = 0
 # msg1 = (msg1.split(' '))
 # print(msg1)
 # for i,j in enumerate(msg1):
