@@ -1,11 +1,8 @@
 # 백쥰 2630번 색종이 만들기
-from re import L
 import sys
 
 n = int(sys.stdin.readline())
-
 paper = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
-
 result = []
 
 def divide(x, y, n):
@@ -22,7 +19,6 @@ def divide(x, y, n):
         result.append(0)
     else:
         result.append(1)
-
 
 divide(0,0,n)
 print(result.count(0))

@@ -101,3 +101,11 @@ for i in range(n):
                         print(stack[-1])
                 else:
                         print(-1)
+
+
+n = int(input())
+
+for i in range(n):
+        point = list(map(int, input().split()))
+        print(point)
+
