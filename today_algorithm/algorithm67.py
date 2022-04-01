@@ -34,12 +34,3 @@ print(a)
 print(b)
 print(c)
 print(d)
-
-
-
-list = [1,1,2,2,3,4,5,6,4,3,2,4,1,2,6,8]
-
-counter = Counter(list)
-print(counter)
-print(counter.most_common())
-print(counter.most_common(n=2))

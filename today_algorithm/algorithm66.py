@@ -74,4 +74,5 @@ for i in range(1, n+1):
     
 DFS(v)
 visited = [False] * (n+1)
+print()
 BFS(v)
