@@ -39,22 +39,17 @@
 
 
 # a b c
-def solution(grid):
-    answer = 0
+# def solution(grid):
+    # answer = 0
     # ?있으면 개수를 세고 넣을 수 있는 경우의수를 다 적용. 그중에 상하좌우 조건을 만족하는지 검사 만족하는 횟수 출력 가장 좋은 조건만 고르자.
     # 양쪽, 다음행의 같은 인덱스의 값이 같아야함.
     # 가장 좋은조건? = 상하좌우를 확인하고 ?가 있는지 검사 ?가 아닌쪽 문자를 입력
+    
 
-    result = []
-    for i in grid:
-        row = []
-        for j in i:
-            row.append(j)
-        result.append(row)
-    print(result)
-    return answer
-a = ["??b", "abc", "cc?"]
-print(solution(a))
+    # return answer
+
+# a = ["??b", "abc", "cc?"]
+# print(solution(a))
 
 
 # def solution(dist):
@@ -67,3 +62,80 @@ print(solution(a))
 # a = [[0,5,2,4,1],[5,0,3,9,6],[2,3,0,6,3],[4,9,6,0,3],[1,6,3,3,0]]
 # # [[1,2,0,4,3],[3,4,0,2,1]]
 # print(solution(a))
+
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     return n * factorial(n-1)
+
+# num = int(input())
+
+# print(factorial(num))
+
+# def fibo(n):
+#     if n == 0:
+#         return 0
+#     elif n <= 2:
+#         return 1
+#     return fibo(n-1) + fibo(n-2)
+
+# num = int(input())
+
+# print(fibo(num))
+
+# def star(n):
+#     answer = ''
+#     if n <= 3:
+#         return '***\n* *\n***'
+#     answer += '***\n* *\n***'
+#     return star(n/3)
+
+# print(star(27))
+
+
+import re
+
+memo = input()
+memo2 = input()
+memo3 = input()
+
+dict = {}
+
+dict['memo'] = memo
+dict['memo2'] = memo2
+dict['memo3'] = memo3
+
+memo_day = re.findall('\d+',memo)
+memo2_day = re.findall('\d+',memo2)
+memo3_day = re.findall('\d+',memo3)
+
+# print(memo_day)
+# print(memo2_day)
+# print(memo3_day)
+
+for i in range(3):
+	if len(memo_day[0]) == 4:
+		memo_day[0] = memo_day[0][2:]
+	elif len(memo2_day[0]) == 4:
+		memo2_day[0] = memo2_day[0][2:]
+	elif len(memo3_day[0]) == 4:
+		memo3_day[0] = memo3_day[0][2:]
+		
+print(memo_day)
+print(memo2_day)
+print(memo3_day)
+		
+result = {}
+
+result['memo'] = memo_day
+result['memo2'] = memo2_day
+result['memo3'] = memo3_day
+
+# print(result)
+
+sorted_result = sorted(result, key=lambda x: result[x])
+
+# print(sorted_result)
+
+for i in sorted_result:
+	print(dict[i])
