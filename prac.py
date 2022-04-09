@@ -102,14 +102,48 @@
 #                 else:
 #                         print(-1)
 
-def solution(grid):
-    answer = 0
-    for i in grid:
-        for j in i:
+# def solution(grid):
+#     answer = 0
+#     for i in grid:
+#         for j in i:
 
-    return answer
+#     return answer
 
 
-a = ["??b", "abc", "cc?"]
+# a = ["??b", "abc", "cc?"]
 
-print(solution(a))
+# print(solution(a))
+
+# # 재귀동닥 예시
+# def recur(n):
+#     if n < 1:
+#         return 0
+#     return recur(n-1) + n
+
+# # recur(3) 실행했을때
+
+# # recur(3)실행 원본으로부터 복사본을 가져옴 
+# def recur(3): # n == 3
+#     if 3 < 1:
+#         return 0
+#     return recur(3-1) + 3 # n이 1보다 작지 않으므로 recur(2) 실행
+
+# # recur(2) 실행 원본으로부터 복서본 가져옴
+# def recur(2): # n == 2
+#     if 2 < 1:
+#         return 0
+#     return recur(2-1) + 2 # n이 1보다 작지 않으므로 recur(1) 실행
+
+# # recur(1) 실행 원본으로부터 복사본을 가져옴 
+# def recur(1): # n == 1
+#     if 1 < 1:
+#         return 0
+#     return recur(1-1) + 1 # n이 1보다 작지 않으므로 recur(0) 실행
+
+# # recur(0) 실행 원본으로부터 복사본을 가져옴
+# def recur(1): # n == 0
+#     if 1 < 1: # n이 1보다 작으므로 0을 반환 함수좀료 스택에서 사라짐
+#         return 0
+#     return recur(0-1) + 0
+
+# # 이제 호출 했던 곳으로 반환하고 스택에서 사라지는 단계를 반복 결과적으로 recur(3) == 6
