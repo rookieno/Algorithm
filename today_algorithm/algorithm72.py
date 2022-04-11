@@ -1,9 +1,9 @@
 # 백준 9663번 N-Queen
-def dfs():
+def dfs(n):
     return
 
 n = int(input())
 
-graph = [[0]*n]*n
+graph = [0]*n
 
 print(graph)

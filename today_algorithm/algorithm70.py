@@ -1,6 +1,4 @@
 # 백준 15649번 N과 M(1)
-import sys
-
 def dfs():
     if len(s) == m:
         print(' '.join(map(str,s)))
@@ -10,7 +8,6 @@ def dfs():
             s.append(i)
             dfs()
             s.pop()
-
 
 n ,m = map(int, input().split())
 
