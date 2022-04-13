@@ -44,7 +44,7 @@ def queen(row):
 n = int(sys.stdin.readline())
 cnt = 0
 graph = [0] * n
-# n_queens(0, graph)
+n_queens(0, graph)
 queen(0)
 print(cnt)
 
