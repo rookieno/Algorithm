@@ -15,12 +15,12 @@
 #
 # 10000보다 작거나 같은 셀프 넘버를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.
 def self_num():
-    is_self_num = []
+    not_self_num = []
     for i in range(10000):
         a = i + (i // 1000) + (i // 100 % 10) + (i // 10 % 100 % 10) + (i % 10)
-        is_self_num.append(a)
+        not_self_num.append(a)
     for i in range(10000):
-        if i not in is_self_num:
+        if i not in not_self_num:
             print(i)
 
 self_num()
