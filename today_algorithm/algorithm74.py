@@ -5,12 +5,13 @@ for i in range(t):
     k = int(input())
     n = int(input())
 
-result = 0
+    zero = list(range(1,n+1))
 
-for i in range(1, n):
-    result += sum(list(range(1, i+1)))
-
-    print(result)
+    for i in range(k):
+        for j in range(1,n):
+            zero[j] += zero[j-1]
+            print(zero)
+    print(zero[-1])
 
 # k층 n호 
 # 3층 1 5 15 35
