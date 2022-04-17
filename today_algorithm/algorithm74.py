@@ -10,7 +10,7 @@ for i in range(t):
     for i in range(k):
         for j in range(1,n):
             zero[j] += zero[j-1]
-            print(zero)
+
     print(zero[-1])
 
 # k층 n호 
