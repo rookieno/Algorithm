@@ -12,7 +12,7 @@ def solution(n):
             answer.append(i)
             result = n // i
             return solution(result)
-            
+
 solution(n)
 for i in answer:
     print(i)
