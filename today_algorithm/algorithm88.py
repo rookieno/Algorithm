@@ -1,10 +1,13 @@
-# SW Expert 1859. 백만장자 프로젝트
+# 백준 2750번 수 정렬하기
 
-t = int(input())
+n = int(input())
 
-for _ in range(t)
-    n = int(input())
-    price = list(map(int, input().split()))
-    
-    
+nums = []
 
+for _ in range(n):
+    nums.append(int(input()))
+
+nums.sort()
+
+for i in nums:
+    print(i)
