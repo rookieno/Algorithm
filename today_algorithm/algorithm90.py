@@ -1,5 +1,6 @@
 # 백준 2751번 수 정렬하기 2
 
+# sorted가 기본적으로 병합정렬기반으로 만들어짐
 def merge(arr1, arr2):
     target = []
     arr1_index = 0
@@ -31,13 +32,14 @@ def merge_sort(array):
     right_array = merge_sort(array[mid:])
     return merge(left_array, right_array)
 
+import sys
 
-n  = int(input())
+n  = int(sys.stdin.readline())
 
 result = []
 
 for _ in range(n):
-    result.append(int(input()))
+    result.append(int(sys.stdin.readline()))
 
 
 answer = merge_sort(result)

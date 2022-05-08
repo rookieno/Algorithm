@@ -1,4 +1,4 @@
-# 백준 11650번 좌표 정렬하기
+# 백준 11650번 좌표 정렬하기 2
 n = int(input())
 
 graph = []
@@ -11,4 +11,3 @@ graph = sorted(graph, key=lambda x:(x,x))
 
 for i in graph:
     print(i[0], i[1])
-    
