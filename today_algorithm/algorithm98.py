@@ -26,7 +26,10 @@
 
 # print(' '.join(map(str,answer)))
 
+# 알고리즘 분류 : 수학, 정수론, 유클리드 호재법
+# 약수를 이용해보자
 import sys
+from math import gcd
 
 input = sys.stdin.readline
 
@@ -34,18 +37,28 @@ n = int(input())
 
 answer = []
 
+nums = []
+
 for _ in range(n):
-    nums = list(map(int, input().split()))
+    num = int(input())
+    nums.append(num)
 
-print(nums)
+result = [nums[i] - nums[i-1] for i in range(1, n)]
 
-target = 1
+target = result[0]
 
-while target != max(nums):
-    check = []
-    target += 1
-    for i in nums:
-        check.append(i%target)
-    if len(set(check)) == 1:
-        print(target, end=' ')
+for i in range(1, len(result)):
+    target = gcd(target, result[i])
+
+
+for i in range(2, int(target**0.5)+1):
+    if target % i == 0:
+        answer.append(i)
+        answer.append(target//i)
+    
+answer.append(target)
+
+answer.sort()
+
+print(*answer)
 

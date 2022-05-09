@@ -33,7 +33,7 @@
 
 # print(' '.join(map(str, graph))
 
-
+# 인덱싱 낮은 시간복잡도로 하는법 딕셔너리 이용 시간복잡도 O
 n = int(input())
 
 graph = list(map(int, input().split()))
