@@ -1,30 +1,30 @@
 # 백준 2981번 검문
 # 시간초과
-# import sys
+import sys
 
-# input = sys.stdin.readline
+input = sys.stdin.readline
 
-# n = int(input())
+n = int(input())
 
-# nums = []
+nums = []
 
-# answer = []
+answer = []
 
-# for _ in range(n):
-#     num = int(input())
-#     nums.append(num)
+for _ in range(n):
+    num = int(input())
+    nums.append(num)
 
-# target = 1
+target = 1
 
-# while target != max(nums):
-#     check = []
-#     target += 1
-#     for i in nums:
-#         check.append(i%target)
-#     if len(set(check)) == 1:
-#         answer.append(target)
+while target != max(nums):
+    check = []
+    target += 1
+    for i in nums:
+        check.append(i%target)
+    if len(set(check)) == 1:
+        answer.append(target)
 
-# print(' '.join(map(str,answer)))
+print(' '.join(map(str,answer)))
 
 # 알고리즘 분류 : 수학, 정수론, 유클리드 호재법
 # 약수를 이용해보자
@@ -58,7 +58,8 @@ for i in range(2, int(target**0.5)+1):
     
 answer.append(target)
 
+answer = list(set(answer))
+
 answer.sort()
 
 print(*answer)
-
