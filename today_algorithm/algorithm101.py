@@ -25,16 +25,14 @@ for i in range(6):
 
 index_list = sorted(index_list, key=lambda x:x[0])
 
-print(index_list)
-
-for i,j in enumerate(index_list):
+for i in range(6):
     if i == x_idx:
         x1 = abs(index_list[(i+5)%6][1] - index_list[(i-5)%6][1])
     elif i == y_idx:
         y1 = abs(index_list[(i+5)%6][1] - index_list[(i-5)%6][1])
 
 
-answer = ((x*y)-(x1*y1)) * n
+answer = (x*y-x1*y1) * n
 
 print(answer)
 
