@@ -8,15 +8,14 @@ for _ in range(p):
     a, b  = map(int, input().split())
 
     y1 = y+h/2
-    x1 = x+h
+    x1 = x+w
 
     if a >= x and a <= x+w and b >= y and b <= y+h:
         cnt += 1
     elif a < x and ((a-x) ** 2 + (b-y1) ** 2) <= (h/2) ** 2:
         cnt += 1
-    elif a > x+w and ((a-x1) ** 2 + (b-y1) **2) <= (h/2) ** 2:
+    elif a > x1 and ((a-x1) ** 2 + (b-y1) **2) <= (h/2) ** 2:
         cnt += 1
 
-    print(cnt)
 
 print(cnt)
