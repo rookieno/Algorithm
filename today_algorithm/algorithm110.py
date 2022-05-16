@@ -9,4 +9,4 @@ for i in range(len(s)):
         result = s[i:j+1]
         answer.add(result)
 
-print(answer)
+print(len(answer))
