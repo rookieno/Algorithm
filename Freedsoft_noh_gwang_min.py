@@ -72,20 +72,6 @@ class InventoryAllocator():
                     elif num != 0 and i['inventory'][fruit] >= num:
                         order[fruit] -= num
                         check[i['name']][fruit] = num
-            # else:
-            #     check_one = self.available_in_one_warehouse(order, warehouse[target:])
-            #     if check_one != False:
-            #         answer.append(check_one[0])
-            #     else:
-            #          for fruit, num in order.items():
-            #             if fruit in i['inventory'].keys():
-            #                 if 0 < i['inventory'][fruit] < num:
-            #                     order[fruit] -= i['inventory'][fruit]
-            #                     check[i['name']][fruit] = i['inventory'][fruit]
-
-            #                 elif num != 0 and i['inventory'][fruit] >= num:
-            #                     order[fruit] -= num
-            #                     check[i['name']][fruit] = num
 
             if check[i['name']] != {}:
                 answer.append(check)
@@ -129,19 +115,19 @@ print('testcase6:', end=' ')
 test6 = InventoryAllocator({ 'apple': 10 }, [{ 'name': 'owd', 'inventory': { 'apple': 5} }, { 'name': 'dm', 'inventory': { 'apple': 3 }}, { 'name': 'ok', 'inventory': { 'apple': 5}}])
 print(test6.solution())
 
-"""1번, 3번 창고에서 처리하는게 가장 합리적일 경우 2품목 이상일때"""
+"""1번, 3번 창고에서 처리하는게 가장 합리적일 경우 2가지 주문"""
 print('testcase7:', end=' ')
 test7 = InventoryAllocator({ 'apple': 10, 'banana': 3 }, [{ 'name': 'owd', 'inventory': { 'apple': 5, 'banana': 1} }, { 'name': 'dm', 'inventory': { 'apple': 3, 'banana': 2 }}, { 'name': 'ok', 'inventory': { 'apple': 5, 'banana': 2}}])
 print(test7.solution())
 
 """한 창고에서 해결 가능한 경우가 2가지 일때 가장 저렴한 창고"""
 print('testcase8:', end=' ')
-test8 = InventoryAllocator({ 'apple': 10, 'banana': 1}, [{ 'name': 'owd', 'inventory': { 'apple': 7 , 'banana': 2 } }, { 'name': 'dm', 'inventory': { 'apple': 5 }}, { 'name': 'ok', 'inventory': { 'apple': 10, 'banana': 1}}, { 'name': 'ok2', 'inventory': { 'apple': 10, 'banana': 1}}])
+test8 = InventoryAllocator({ 'apple': 10, 'banana': 1}, [{ 'name': 'owd', 'inventory': { 'apple': 7 , 'banana': 2 } }, { 'name': 'dm', 'inventory': { 'apple': 5 }}, { 'name': 'ok', 'inventory': { 'apple': 10, 'banana': 10}}, { 'name': 'ok2', 'inventory': { 'apple': 10, 'banana': 1}}])
 print(test8.solution())
 
 """3가지 주문 한 창고에서 해결 가능할 경우"""
 print('testcase9:', end=' ')
-test9 = InventoryAllocator({ 'apple': 10, 'banana': 1, 'orange': 4}, [{ 'name': 'owd', 'inventory': { 'apple': 7 , 'banana': 2 , 'orange': 3} }, { 'name': 'dm', 'inventory': { 'apple': 5 }}, { 'name': 'ok', 'inventory': { 'apple': 10, 'banana': 1, 'orange': 4}}])
+test9 = InventoryAllocator({ 'apple': 10, 'banana': 1, 'orange': 4}, [{ 'name': 'owd', 'inventory': { 'apple': 7 , 'banana': 2 , 'orange': 3} }, { 'name': 'dm', 'inventory': { 'apple': 5 }}, { 'name': 'ok', 'inventory': { 'apple': 10, 'banana': 10, 'orange': 40}}])
 print(test9.solution())
 
 """3가지 주문 1번, 3번 창고에서 처리하는게 가장 합리적일 경우"""
@@ -153,3 +139,8 @@ print(test10.solution())
 print('testcase11:', end=' ')
 test11 = InventoryAllocator({ 'apple': 10, 'banana': 1, 'orange': 4}, [{ 'name': 'owd', 'inventory': { 'apple': 7 , 'banana': 2 , 'orange': 3} }, { 'name': 'dm', 'inventory': { 'apple': 3 }}, { 'name': 'ok', 'inventory': { 'apple': 1, 'banana': 1, 'orange': 2}}])
 print(test11.solution())
+
+"""1번 창고에 주문 품목이 없을때"""
+print('testcase12:', end=' ')
+test12 = InventoryAllocator({ 'banana': 1, 'orange': 4}, [{ 'name': 'owd', 'inventory': { 'apple': 7} }, { 'name': 'dm', 'inventory': { 'orange':4 }}, { 'name': 'ok', 'inventory': { 'apple': 1, 'banana': 1, 'orange': 2}}])
+print(test12.solution())
