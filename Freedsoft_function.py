@@ -39,3 +39,19 @@ def solution2(order, warehouse):
         answer.append(check)
                     
     return answer
+
+
+    # else:
+#     check_one = self.available_in_one_warehouse(order, warehouse[target:])
+#     if check_one != False:
+#         answer.append(check_one[0])
+#     else:
+#          for fruit, num in order.items():
+#             if fruit in i['inventory'].keys():
+#                 if 0 < i['inventory'][fruit] < num:
+#                     order[fruit] -= i['inventory'][fruit]
+#                     check[i['name']][fruit] = i['inventory'][fruit]
+
+#                 elif num != 0 and i['inventory'][fruit] >= num:
+#                     order[fruit] -= num
+#                     check[i['name']][fruit] = num

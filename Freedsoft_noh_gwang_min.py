@@ -85,6 +85,7 @@ class InventoryAllocator():
         else:
             return []
 
+#region testcodes
 """테스트 에시 1"""
 print('testcase1:', end=' ')
 test1 = InventoryAllocator({'apple': 1 },[{ 'name': 'owd', 'inventory': { 'apple': 1 } }])
@@ -144,3 +145,4 @@ print(test11.solution())
 print('testcase12:', end=' ')
 test12 = InventoryAllocator({ 'banana': 1, 'orange': 4}, [{ 'name': 'owd', 'inventory': { 'apple': 7} }, { 'name': 'dm', 'inventory': { 'orange':4 }}, { 'name': 'ok', 'inventory': { 'apple': 1, 'banana': 1, 'orange': 2}}])
 print(test12.solution())
+#endregion
