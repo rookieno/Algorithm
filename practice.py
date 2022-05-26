@@ -93,49 +93,127 @@
 # print(star(27))
 
 
-import re
+# import re
 
-memo = input()
-memo2 = input()
-memo3 = input()
+# memo = input()
+# memo2 = input()
+# memo3 = input()
 
-dict = {}
+# dict = {}
 
-dict['memo'] = memo
-dict['memo2'] = memo2
-dict['memo3'] = memo3
+# dict['memo'] = memo
+# dict['memo2'] = memo2
+# dict['memo3'] = memo3
 
-memo_day = re.findall('\d+',memo)
-memo2_day = re.findall('\d+',memo2)
-memo3_day = re.findall('\d+',memo3)
+# memo_day = re.findall('\d+',memo)
+# memo2_day = re.findall('\d+',memo2)
+# memo3_day = re.findall('\d+',memo3)
 
+# # print(memo_day)
+# # print(memo2_day)
+# # print(memo3_day)
+
+# for i in range(3):
+# 	if len(memo_day[0]) == 4:
+# 		memo_day[0] = memo_day[0][2:]
+# 	elif len(memo2_day[0]) == 4:
+# 		memo2_day[0] = memo2_day[0][2:]
+# 	elif len(memo3_day[0]) == 4:
+# 		memo3_day[0] = memo3_day[0][2:]
+		
 # print(memo_day)
 # print(memo2_day)
 # print(memo3_day)
+		
+# result = {}
+
+# result['memo'] = memo_day
+# result['memo2'] = memo2_day
+# result['memo3'] = memo3_day
+
+# # print(result)
+
+# sorted_result = sorted(result, key=lambda x: result[x])
+
+# # print(sorted_result)
+
+# for i in sorted_result:
+# 	print(dict[i])
+
+
+
+# def recur(list):
+# 	check = len(list)
+# 	if check == 1:
+# 		return print(list[0], end=' ')
+# 	elif check % 2 == 0:
+# 		list.reverse()
+# 		recur(list[:check//2])
+# 		recur(list[check//2:])
+# 	else:
+# 		list.reverse()
+# 		recur(list[:check//2+1])
+# 		recur(list[check//2+1:])
+ 
+# a = [1,2,3,4,5,6]
+
+# recur(a)
+
+# def solution(n, k):
+# 	num = 2**n
+# 	bin_list = []
+# 	answer = 0
+# 	for i in range(num):
+# 		target = format(i, 'b').rjust(n, '0')
+# 		if target.count('1') == k:
+# 			if i % 3 == 0:
+# 				answer += 1
+
+# 	# for i in bin_list:
+# 	# 	if i.count('1') == k:
+# 	# 		target = int(i, 2)
+# 	# 		if target % 3 == 0:
+# 	# 			answer += 1
+# 	return answer
+
+# print(solution(3,2))
+
+
+	
+# 1번
+# 배열 numbers가 있습니다. numbers의 특정 구간의 숫자를 모두 합하는 작업을 반복하려고 합니다.
+# 작업은 배열 start와 finish에 명시되어 있습니다. 예를들어
+
+# number가 [100, 101, 102, 103, 104]
+# start가 [1, 2]
+# finish가 [2, 4]
+# 라면
+
+# 첫 번째 작업은 start[0]부터 finish[0] 구간의 숫자를 모두 더하는겁니다. start[0]은 1이고 finish[0]은 2 이므로 numbers의 1~2사이의 숫자를 모두 더하면 101 + 102 = 203이 됩니다.
+# 두 번째 작업은 start[1]부터 finish[1] 구간의 숫자를 모두 더하는 작업이므로 numbers의 2~4 사이의 숫자를 모두 더하면 102 + 103 + 104 = 309가 됩니다.
+# 이렇게 수행한 작업의 결과를 순서대로 넣은 배열을 return 하도록 함수 solution을 완성하세요.
+# 위의 예제 대로라면 [203, 309]를 반환하면 됩니다.
+
+# 제한사항
+# numbers의 길이 N : N은 100,000 이하의 자연수입니다.
+# numbers의 원소의 값: 10,000 이하의 자연수입니다.
+# 작업의 개수(start와 finish 배열의 길이) 는 100,000 이하입니다.
+# start와 finish 배열의 길이는 항상 같습니다.
+# k번째 작업 start[k]와 finish[k]에 대해서 0 ≤ start[k] ≤ finish[k] < N 입니다.
+# 딕셔너리로하니까 닶이 안맞음 뭐냐 튜플로하니까 또 정답임 버근가
+# 큐로 구현하니 테스트는 통과하나 효율성에서 개박살
+# 시간으로 보았을때 딕셔너리나 튜플로하는건데.. 어디서 더 줄여야핧지 모르겠음
+
+
+
+
+n = [100,101,102,103,104]
+result = {0:[1,2], 1:[2,4],2:[2,3]}
+answer = []
 
 for i in range(3):
-	if len(memo_day[0]) == 4:
-		memo_day[0] = memo_day[0][2:]
-	elif len(memo2_day[0]) == 4:
-		memo2_day[0] = memo2_day[0][2:]
-	elif len(memo3_day[0]) == 4:
-		memo3_day[0] = memo3_day[0][2:]
-		
-print(memo_day)
-print(memo2_day)
-print(memo3_day)
-		
-result = {}
+	target = sum(n[result[i][0]:result[i][1]+1])
+	answer.append(target)
 
-result['memo'] = memo_day
-result['memo2'] = memo2_day
-result['memo3'] = memo3_day
+print(answer)
 
-# print(result)
-
-sorted_result = sorted(result, key=lambda x: result[x])
-
-# print(sorted_result)
-
-for i in sorted_result:
-	print(dict[i])
