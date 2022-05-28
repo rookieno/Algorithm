@@ -287,12 +287,18 @@
 # 배달 팁은 1 이상 100 이하인 자연수입니다.
 
 
-n = [100,101,102,103,104]
-result = {0:[1,2], 1:[2,4],2:[2,3]}
-answer = []
+# n = [100,101,102,103,104]
+# result = {0:[1,2], 1:[2,4],2:[2,3]}
+# answer = []
 
-for i in range(3):
-	target = sum(n[result[i][0]:result[i][1]+1])
-	answer.append(target)
+# for i in range(3):
+# 	target = sum(n[result[i][0]:result[i][1]+1])
+# 	answer.append(target)
 
-print(answer)
+# print(answer)
+
+# for i in range(1, 11):
+num = int(input())
+apart = list(map(int, input().split()))[2:num-2]
+print(apart)
+    # for j in apart:

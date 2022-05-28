@@ -147,3 +147,9 @@
 #     return recur(0-1) + 0
 
 # # 이제 호출 했던 곳으로 반환하고 스택에서 사라지는 단계를 반복 결과적으로 recur(3) == 6
+
+t = int(input())
+
+for _ in range(t):
+    a = int(input())
+    print(a ** 0.5)
