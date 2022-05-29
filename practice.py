@@ -297,8 +297,9 @@
 
 # print(answer)
 
-# for i in range(1, 11):
-num = int(input())
-apart = list(map(int, input().split()))[2:num-2]
-print(apart)
-    # for j in apart:
+for i in range(1, 11):
+    num = int(input())
+    apart = list(map(int, input().split()))
+
+    for j in range(2, num-2):
+        check = apart[i+2],
