@@ -297,9 +297,21 @@
 
 # print(answer)
 
-for i in range(1, 11):
-    num = int(input())
-    apart = list(map(int, input().split()))
+# for i in range(1, 11):
+#     num = int(input())
+#     apart = list(map(int, input().split()))
 
-    for j in range(2, num-2):
-        check = apart[i+2],
+#     for j in range(2, num-2):
+#         check = apart[i+2],
+
+target = list(range(5, 128))
+
+result = {}
+
+for i in target:
+    temp = str(format(i, 'b')).count('1')
+    result[i] = temp
+
+result = sorted(result.items(), key=lambda x:x[1], reverse=True)
+
+print(result)
