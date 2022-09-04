@@ -22,8 +22,6 @@ def solution(id_list, report, k):
             if j >= k:
                 if i in b:
                     answer[a] += 1
-    print(check_user)
-    print(result)
     return list(answer.values())
 
 a = ["muzi", "frodo", "apeach", "neo"]
