@@ -20,11 +20,6 @@ for i in range(n):
     for j in range(len(s) - 1):
         if s.find(s[j]) > s.find(s[j+1]):
             cnt -= 1
+            break
 
-            
 print(cnt)
-
-
-    
-
-

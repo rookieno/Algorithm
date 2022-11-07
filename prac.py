@@ -278,29 +278,41 @@
 # # key, value를 추가했을때 보면 깊은 복사 같다.
 # # 내부 리스트를 보면 주소가 동일한 것을 볼수 있고 내부 리스트에 값을 추가하면 둘다 추가되는 것을 확인 가능 얕은복사
 
-import copy
+# import copy
 
-arr1 = [1,2,3,[4,5,6]]
-arr2 = copy.deepcopy(arr1) # 복사
+# arr1 = [1,2,3,[4,5,6]]
+# arr2 = copy.deepcopy(arr1) # 복사
 
-# 메모리 주소가 다르다 깊은 복사
-print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6]] 4367780608
-print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6]] 4367785152
+# # 메모리 주소가 다르다 깊은 복사
+# print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6]] 4367780608
+# print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6]] 4367785152
 
-# 값이 다름 
-arr2.append(32)
-print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6]] 4367780608
-print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6], 32] 4367785152
+# # 값이 다름 
+# arr2.append(32)
+# print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6]] 4367780608
+# print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6], 32] 4367785152
 
-# 리스트 안에 리스트 들의 주소가 다르다!
-print(arr1[3], id(arr1[3])) # [4, 5, 6] 4367780288
-print(arr2[3], id(arr2[3])) # [4, 5, 6] 4367780736
+# # 리스트 안에 리스트 들의 주소가 다르다!
+# print(arr1[3], id(arr1[3])) # [4, 5, 6] 4367780288
+# print(arr2[3], id(arr2[3])) # [4, 5, 6] 4367780736
 
-# 리스트 안에 리스트에 값 추가 주소가 달라서 arr2에 영향을 주지 않음
-arr1[3].append(64)
-print(arr1[3], id(arr1[3])) # [4, 5, 6, 64] 4367780288
-print(arr2[3], id(arr2[3])) # [4, 5, 6] 4367780736
+# # 리스트 안에 리스트에 값 추가 주소가 달라서 arr2에 영향을 주지 않음
+# arr1[3].append(64)
+# print(arr1[3], id(arr1[3])) # [4, 5, 6, 64] 4367780288
+# print(arr2[3], id(arr2[3])) # [4, 5, 6] 4367780736
 
-# 전체 다시 확인 독립적이다 깊은 복사
-print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6, 64]] 4367780608
-print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6], 32] 4367785152
+# # 전체 다시 확인 독립적이다 깊은 복사
+# print(arr1, id(arr1)) # [1, 2, 3, [4, 5, 6, 64]] 4367780608
+# print(arr2, id(arr2)) # [1, 2, 3, [4, 5, 6], 32] 4367785152
+
+def extendList(val, list=[]):
+    list.append(val)
+    return list
+
+list1 = extendList(10)
+list2 = extendList(123, [])
+list3 = extendList('a')
+
+print("list1 = %s" % list1)
+print("list2 = %s" % list2)
+print("list3 = %s" % list3)
